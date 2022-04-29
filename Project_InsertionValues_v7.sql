@@ -1,0 +1,97 @@
+-- INSERT VALUE INTO THE TABLES OF THE DATABASE CSIS2300Project
+-- 1. Course Table Insertion
+
+INSERT INTO Course VALUES(2600,'OPERATING SYSTEM');
+INSERT INTO Course VALUES(2200,'VIRTUALIZATION AND NETWORKING');
+INSERT INTO Course VALUES(1175,'INTRODUCTION TO PROGRAMMING');
+INSERT INTO Course VALUES(2300,'DATABASE');
+INSERT INTO Course VALUES(2175,'JAVA');
+
+
+-- 2. SectionSchedule Data Insertion
+
+INSERT INTO SectionSchedule VALUES(1,'10:00:00','13:00:00','MONDAY');
+INSERT INTO SectionSchedule VALUES(2,'15:00:00','16:00:00','MONDAY');
+INSERT INTO SectionSchedule VALUES(3,'9:00:00','12:00:00','TUESDAY');
+INSERT INTO SectionSchedule VALUES(4,'10:00:00','11:00:00','WEDNESDAY');
+INSERT INTO SectionSchedule VALUES(5,'14:00:00','17:00:00','THURSDAY');
+INSERT INTO SectionSchedule VALUES(6,'10:00:00','11:00:00','FRIDAY');
+INSERT INTO SectionSchedule VALUES(7,'13:00:00','15:00:00','TUESDAY');
+INSERT INTO SectionSchedule VALUES(8,'11:00:00','12:00:00','FRIDAY');
+
+
+-- 3. Room Data Insertion
+INSERT INTO Room VALUES(101,'A','L');
+INSERT INTO Room VALUES(203,'A','O');
+INSERT INTO Room VALUES(205,'B','C');
+INSERT INTO Room VALUES(206,'B','C');
+INSERT INTO Room VALUES(210,'D','C');
+INSERT INTO Room VALUES(303,'C','L');
+INSERT INTO Room VALUES(305,'C','O');
+
+-- 4. Instructor Data Insertion
+
+INSERT INTO Instructor VALUES(4477,'JOHN DAVID','(245)125-458','john06@gmail.com','BA');
+INSERT INTO Instructor VALUES(4789,'MIKE STEW','(245)125-756','mikeawesome@gmail.com','MG');
+INSERT INTO Instructor VALUES(4745,'HARLEY QUINN','(245)256-957','harleywins@gmail.com','BA');
+INSERT INTO Instructor VALUES(4965,'BRUCE CLERK','(245)124-468','iambatman@gmail.com','PHD');
+INSERT INTO Instructor VALUES(4960,'HARRY POTTER','(245)174-412','harrywins@gmail.com','PHD');
+
+-- 5. Instructor_InstructorSchedule Data Insertion
+INSERT INTO Instructor_InstructorSchedule VALUES(4477,44771,'C','10:00:00','12:00:00','MONDAY');
+INSERT INTO Instructor_InstructorSchedule VALUES(4477,44772,'O','15:00:00','16:00:00','MONDAY');
+INSERT INTO Instructor_InstructorSchedule VALUES(4477,44773,'L','9:00:00','10:00:00','MONDAY');
+INSERT INTO Instructor_InstructorSchedule VALUES(4789,47891,'C','9:00:00','12:00:00','TUESDAY');
+INSERT INTO Instructor_InstructorSchedule VALUES(4789,47892,'O','10:00:00','11:00:00','WEDNESDAY');
+INSERT INTO Instructor_InstructorSchedule VALUES(4789,47893,'L','8:00:00','9:00:00','TUESDAY');
+INSERT INTO Instructor_InstructorSchedule VALUES(4745,47451,'C','14:00:00','17:00:00','THURSDAY');
+INSERT INTO Instructor_InstructorSchedule VALUES(4745,47452,'O','10:00:00','11:00:00','FRIDAY');
+INSERT INTO Instructor_InstructorSchedule VALUES(4965,49651,'O','12:00:00','13:00:00','FRIDAY');
+INSERT INTO Instructor_InstructorSchedule VALUES(4965,49652,'C','13:00:00','15:00:00','FRIDAY');
+
+
+-- 6. Course_Section Data Insertion
+INSERT INTO Course_Section VALUES(2200,1,'SUMMER2021','ONLINE',4477);
+INSERT INTO Course_Section VALUES(2200,2,'FALL2021','PRESENTIAL',4477);
+INSERT INTO Course_Section VALUES(2200,3,'WINTER2022','ONLINE',4477);
+INSERT INTO Course_Section VALUES(2600,1,'SUMMER2021','ONLINE',4789);
+INSERT INTO Course_Section VALUES(2600,2,'WINTER2021','SEMI-PRESENTIAL',4789);
+INSERT INTO Course_Section VALUES(2600,3,'WINTER2022','PRESENTIAL',4960);
+INSERT INTO Course_Section VALUES(1175,1,'SUMMER2021','ONLINE',4965);
+INSERT INTO Course_Section VALUES(1175,2,'FALL2021','PRESENTIAL',4965);
+INSERT INTO Course_Section VALUES(1175,3,'WINTER2022','PRESENTIAL',4965);
+INSERT INTO Course_Section VALUES(1175,4,'SUMMER2022','ONLINE',4965);
+INSERT INTO Course_Section VALUES(1175,5,'WINTER2022','ONLINE',4960);
+INSERT INTO Course_Section VALUES(2175,1,'SUMMER2021','ONLINE',4960);
+
+-- 7. Student Data Insertion
+
+INSERT INTO Student VALUES(3003,'Roger Ravi',1,2200);
+INSERT INTO Student VALUES(3123,'Hari David',1,2200);
+INSERT INTO Student VALUES(3456,'Skidadoole Jay',2,2200);
+INSERT INTO Student VALUES(3340,'Escape hero',2,2200);
+INSERT INTO Student VALUES(3234,'Skipper Man',1,2600);
+INSERT INTO Student VALUES(3543,'Kandam Odal',1,2600);
+INSERT INTO Student VALUES(3078,'Gastly jo',2,2600);
+INSERT INTO Student VALUES(3583,'Sprint Mar',2,2600);
+INSERT INTO Student VALUES(3690,'Jumping Jack',1,1175);
+INSERT INTO Student VALUES(3906,'Tiger Hunter',2,1175);
+
+-- 8. Instructor_Student_Appointment Data Insertion
+INSERT INTO Instructor_Student_Appointment VALUES(4477,3003,1,'MONDAY','15:00:00','16:00:00'); 
+INSERT INTO Instructor_Student_Appointment VALUES(4477,3340,2,'MONDAY','15:00:00','16:00:00'); 
+INSERT INTO Instructor_Student_Appointment VALUES(4477,3906,3,'MONDAY','9:00:00','10:00:00'); 
+INSERT INTO Instructor_Student_Appointment VALUES(4477,3003,4,'MONDAY','9:00:00','10:00:00'); 
+INSERT INTO Instructor_Student_Appointment VALUES(4789,3078,5,'WEDNESDAY','10:00:00','11:00:00'); 
+INSERT INTO Instructor_Student_Appointment VALUES(4789,3340,6,'WEDNESDAY','10:00:00','11:00:00'); 
+INSERT INTO Instructor_Student_Appointment VALUES(4789,3690,8,'WEDNESDAY','10:00:00','11:00:00'); 
+INSERT INTO Instructor_Student_Appointment VALUES(4965,3690,7,'FRIDAY','12:00:00','13:00:00'); 
+INSERT INTO Instructor_Student_Appointment VALUES(4965,3340,9,'FRIDAY','12:00:00','13:00:00'); 
+
+-- 9. SectionScheduleRoom Data Insertion
+INSERT INTO Section_Schedule_Room VALUES(2200,1,2,203);
+INSERT INTO Section_Schedule_Room VALUES(2600,1,4,305);
+INSERT INTO Section_Schedule_Room VALUES(1175,1,4,305);
+INSERT INTO Section_Schedule_Room VALUES(2200,2,7,210);
+INSERT INTO Section_Schedule_Room VALUES(2600,1,8,203);
+INSERT INTO Section_Schedule_Room VALUES(2175,1,3,303);
